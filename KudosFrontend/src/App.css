@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+
+button{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding: 4px 8px;
+  background-color: rgb(122, 165, 81);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+button:hover{
+  background-color: rgb(144, 181, 108);
+}
+button:active{
+  background-color: rgb(71, 110, 31);
+}
+button:disabled{
+  background-color: rgb(171, 171, 171);
+}

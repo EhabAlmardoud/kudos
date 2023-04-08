@@ -1,0 +1,32 @@
+CREATE TABLE users(
+    id varchar(255),
+    name varchar(255),
+    PRIMARY KEY (id)
+);
+CREATE TABLE person(
+    id varchar(255),
+    name varchar(255),
+    user_id varchar(255),
+    PRIMARY KEY (id)
+    FOREIGN KEY (user_id) REFERENCES users(id)
+); 
+CREATE TABLE kudosRooms(
+    id varchar(255),
+    name varchar(255),
+    user_id varchar(255),
+    public_link_id varchar(255),
+    created_at TIMESTAMP NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+); 
+CREATE TABLE kudos(
+    id varchar(255),
+    room_id varchar(255),
+    sender varchar(255),
+    receiver varchar(255),
+    message varchar(255),
+    is_marked_as_seen boolean,
+    created_at TIMESTAMP NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (room_id) REFERENCES kudosRooms(id)
+);
